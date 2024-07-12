@@ -1,0 +1,63 @@
+﻿@model Kelloggs.Models.ContactoData
+<!-- Newslettter -->
+<section class="newsletter">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-6 order-2 order-lg-0 newsletter-image">
+                <img class="newsletter-toni" src="/images/newsletter-toni.png" alt="">
+            </div>
+            <div class="col-12 col-lg-6 newsletter-content">
+                <div class="p-5">
+                    <h1 class="titulares">
+                        conviértete en
+                        un amigo kellogg´s
+                    </h1>
+                    <hr class="linea">
+
+                    <p class="text-white text-center mt-4">
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum hasthe industry's standard dummy text ever
+                    </p>
+
+                    @using (Html.BeginForm("SaveData", "Home", FormMethod.Post, new { @id = "SaveData", @class = "newsletter-group", enctype = "multipart/form-data" }))
+                    {
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(m => m.Contry, new { @id = "Contry" })
+                        <div class="input-group mb-3 input-group-lg has-validation">
+                            <span class="input-group-text">
+                                <img src="/images/user.svg" class="img-fluid" alt="">
+                            </span>
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "Username" })
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "invalid-feedback" })
+                        </div>
+                        <div class="input-group mb-3 input-group-lg has-validation">
+                            <span class="input-group-text">
+                                <img src="/images/email.svg" class="img-fluid" alt="">
+                            </span>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email", @type = "email" })
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "invalid-feedback" })
+                        </div>
+                        <div class="input-group mb-3 input-group-lg has-validation">
+                            <span class="input-group-text">
+                                <img src="/images/flag.svg" class="img-fluid" alt="">
+                            </span>
+                            <select class="form-select" id="inputGroupSelect01">
+                                <option selected disabled value="">Selecciona un páis</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            @Html.ValidationMessageFor(m => m.Contry, "", new { @class = "invalid-feedback" })
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" onclick="EnviarForm()">
+                                <span>ENVIAR</span>
+                                <img src="/images/send.svg" alt="">
+                            </button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

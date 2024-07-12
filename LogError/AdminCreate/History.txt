@@ -1,0 +1,7 @@
+2024-04-04 14:47:36,665 [1] INFO  Kelloggs.Functions.DDLog [(null)] - Inicia aplicación
+2024-04-04 14:47:36,904 [6] INFO  Kelloggs.Functions.DDLog [(null)] - Inicia sección
+2024-04-04 14:48:53,217 [6] ERROR Kelloggs.Functions.DDLog [(null)] - Application_Error: GetJSonResponse 
+System.UriFormatException: URI no válido: no se puede determinar el formato del URI.
+   en System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   en System.Net.WebRequest.Create(String requestUriString)
+   en Kelloggs.Functions.ProxyWcfRest.GetJSonResponse() en C:\Users\sairv\Source\Repos\mauramirez\amigosKelloggs\Kelloggs\Functions\ProxyServices.cs:línea 110
